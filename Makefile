@@ -47,8 +47,12 @@ help:
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
 	@echo --IMPORTANT--
-	@echo Use the following command to create and upload the website
+	@echo Use the following command to create and upload the website:
 	@echo make site
+	@echo Use the following command to run the website locally, on this machine:
+	@echo make test
+	@echo Use the following command to "clean up" after running "make test":
+	@echo make clear
 
 build: html
 	copy CNAME docs
