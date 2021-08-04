@@ -50,13 +50,20 @@ help:
 	@echo Use the following command to create and upload the website
 	@echo make site
 
-site: html
+build: html
 	copy CNAME docs
 	xcopy content\static docs /E /H /Y
+
+site: build
 	git add *
 	git commit -m "build"
 	git push origin master
 	@echo Site is now created and uploaded. It can now be viewed at https://lacraftsmen.com/. If no changes are shown, clear your browser cache or wait 30 seconds to a few minutes.
+
+test: html
+	python -m http.server --directory docs 8080
+	git checkout -f
+	git clean -fd
 
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
