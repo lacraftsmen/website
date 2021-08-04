@@ -52,7 +52,7 @@ help:
 
 site: html
 	copy CNAME docs
-	xcopy content\static docs /E /H
+	xcopy content\static docs /E /H /Y
 	git add *
 	git commit -m "build"
 	git push origin master
