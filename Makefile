@@ -62,6 +62,8 @@ site: build
 
 test: html
 	python -m http.server --directory docs 8080
+
+clear:
 	git checkout -f
 	git clean -fd
 
