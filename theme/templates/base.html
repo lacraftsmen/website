@@ -1,17 +1,20 @@
-{% extends "!simple/base.html" %}
-
-{% block head %}
-{{ super() }}
-       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
-       <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/navbar.css" />
-{% endblock %}
-
-{% block body %}
-{{ super() }}
-       <div class="topnav">
-              <a href="{{ SITEURL }}/" style="float:left;font-size:25px;">LaCraftsmen</a>
-              <a href="{{ SITEURL }}/contact">Contact Us</a>
-              <a href="{{ SITEURL }}/about">About</a>
-              <a href="{{ SITEURL }}/projects">Projects</a>
-       </div>
-{% endblock %}
+<html>
+       <head>
+       {% block head %}
+              <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
+              <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/navbar.css" />
+       {% endblock %}
+       </head>
+       <body>
+       {% block content %}
+              <div class="topnav">
+                     <a href="{{ SITEURL }}/" style="float:left;font-size:25px;">LaCraftsmen</a>
+                     <a href="{{ SITEURL }}/contact">Contact Us</a>
+                     <a href="{{ SITEURL }}/about">About</a>
+                     <a href="{{ SITEURL }}/projects">Projects</a>
+              </div>
+       {% endblock %}
+       {% block footer %}
+       {% endblock %}
+       </body>
+</html>
