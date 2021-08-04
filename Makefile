@@ -46,10 +46,19 @@ help:
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
 	@echo '                                                                          '
+	@echo --IMPORTANT--
+	@echo Use the following command to create and upload the website
+	@echo make site
+
+site: html
+	git add *
+	copy CNAME docs
+	git commit -m "build"
+	git push origin master
+	@echo Site is now created and uploaded. It can now be viewed at https://lacraftsmen.com/. If no changes are shown, clear your browser cache or wait 30 seconds to a few minutes.
 
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
-	copy CNAME docs
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
