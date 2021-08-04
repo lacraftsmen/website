@@ -3,7 +3,7 @@
 
 AUTHOR = 'LaCraftsmen'
 SITENAME = 'LaCraftsmen'
-SITEURL = ''
+SITEURL = 'https://lacraftsmen.com/'
 
 PATH = 'content'
 
