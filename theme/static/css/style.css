@@ -1,12 +1,5 @@
 body {
   font-family: monospace;
-  font-size: 100%;
-  background-color: white;
-  color: #111;
-  min-width: 400px;
-  min-height: 200px;
-  padding: 1em;
-  margin: 5% 10%;
-  border-radius: 5px;
-  display: block;
+  background-color: #ecf2f8;
+  color: #070c13;
 }
