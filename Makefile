@@ -53,6 +53,7 @@ help:
 site: html
 	git add *
 	copy CNAME docs
+	copy content/static docs
 	git commit -m "build"
 	git push origin master
 	@echo Site is now created and uploaded. It can now be viewed at https://lacraftsmen.com/. If no changes are shown, clear your browser cache or wait 30 seconds to a few minutes.
