@@ -53,6 +53,8 @@ help:
 	@echo make test
 	@echo Use the following command to "clean up" after running "make test":
 	@echo make clear
+	@echo Use the following command to format the html output within the docs folder
+	@echo make format
 
 build: html
 	copy CNAME docs
@@ -99,5 +101,7 @@ github: publish
 	ghp-import -m "Generate Pelican site" -b $(GITHUB_PAGES_BRANCH) "$(OUTPUTDIR)"
 	git push origin $(GITHUB_PAGES_BRANCH)
 
+format:
+	python formatter.py
 
 .PHONY: html help clean regenerate serve serve-global devserver publish github
